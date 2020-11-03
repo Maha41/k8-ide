@@ -30,5 +30,5 @@ RUN for ext in ${EXTENSIONS}; do code-server --install-extension ${ext}; done
 
 COPY --chown=coder:coder entrypoint.sh /
 COPY --chown=coder:coder settings.json /home/coder/.local/share/code-server/User/settings.json
-
+RUN ["chmod", "+x", "/entrypoint.sh"]
 ENTRYPOINT ["dumb-init", "/entrypoint.sh"]

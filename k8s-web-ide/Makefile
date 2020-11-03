@@ -8,10 +8,4 @@ push: build
 
 run: build
 	# Sample usage locally
-	docker run -it \
-		-p 127.0.0.1:8080:8080 \
-		-e TUTORIALS_REPO=https://github.com/Maha41/k8-ide.git\
-		-e TUTORIALS_DIR=tutorials \
-		-e PASSWORD=test1234 \
-		-v /var/run/docker.sock:/var/run/docker.sock \
-		maha/k8s-web-ide:$(VERSION)
+	docker run -it -p 127.0.0.1:8080:8080 -e TUTORIALS_REPO=https://github.com/Maha41/k8-ide.git -e TUTORIALS_DIR=tutorials -v /var/run/docker.sock:/var/run/docker.sock maha/k8s-web-ide:$(VERSION)
